@@ -12,6 +12,7 @@ public class ReadLines{
 		catch(IOException e){
 			e.printStackTrace();
 		}
+		System.out.println("test");
 	}
 
 	public static void readLines(File f) throws IOException{
@@ -22,6 +23,7 @@ public class ReadLines{
 			String[] values = line.split("\t");
 			for(String str : values){
 				System.out.println(str);
+
 			}
 			
 		}
