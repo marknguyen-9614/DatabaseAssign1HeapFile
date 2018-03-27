@@ -7,7 +7,7 @@ public class dbload{
 	static int numOfPages = 0;
 	static long startTime = 0;
 	static long endTime = 0;
-	static long totalTime = 0;
+	
 
 	static ArrayList<Page> heap = new ArrayList<Page>();
 	public static void main(String[] args) {
@@ -25,7 +25,12 @@ public class dbload{
 				
 				try{
 					readLines(f);
-				} 
+				}
+				catch(FileNotFoundException fnf){
+					System.out.println(fnf.getMessage());
+					System.out.println("Terminating Program");
+					System.exit(0);
+				}
 				catch(IOException e){
 					e.printStackTrace();
 				}
@@ -84,21 +89,21 @@ public class dbload{
 					}
 				}
 			}
-			if(page.getPageSize()+businesses.byteAllocation() < pageSize){
+			if(businesses.byteAllocation()+page.getPageSize() < pageSize){
 				page.addBusinesses(businesses);
+				numOfBusinesses++;
 				System.out.println(businesses);
+
 			}
 			else{
-				numOfPages++;
 				heap.add(page);
 				page = new Page(pageSize);
+				numOfPages++;
 				page.addBusinesses(businesses);
+				numOfBusinesses++;
+				System.out.println(businesses);
 				System.out.println(numOfPages);
 			}
-
-			//System.out.println(businesses);
-			numOfBusinesses++;
-			
 		}
 		br.close();
 		fr.close();

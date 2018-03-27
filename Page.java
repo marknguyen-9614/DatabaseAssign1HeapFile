@@ -19,15 +19,11 @@ public class Page implements Serializable{
 		return businesses;
 	}
 
-	public int getPageNum(){
-		return pageNum;
-	}
-
 	public int getPageSize(){
 		int pageSize = 0;
 		for(Businesses business : businesses){
 			pageSize += business.byteAllocation();
 		}
 		return pageSize;
-	}
+	}	
 }
