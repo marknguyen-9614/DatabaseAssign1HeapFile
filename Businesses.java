@@ -73,7 +73,8 @@ public class Businesses implements Serializable{
 	public void setAbn(String abn){
 		this.abn = abn;
 	}
-
+	//String fixed length 2 bytes per char via .length()
+	//Boolean 1 byte
 	public int byteAllocation(){
 		int pageSize = 0;
 		//businessName String
