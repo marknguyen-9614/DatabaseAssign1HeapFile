@@ -1,10 +1,17 @@
 import java.io.*;
 
 
-public class ReadLines{
+public class dbLoad{
 
 	public static void main(String[] args) {
 		//File f = new File("FormattedDataWithCounterNewNoNull.csv");
+
+		if(args[0].equals("-p")){
+
+		}
+		else{
+			System.out.println("Run format : java d")
+		}
 		File f = new File("BUSINESS_NAMES_201803.csv");
 		try{
 			readLines(f);
