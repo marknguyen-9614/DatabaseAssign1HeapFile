@@ -38,7 +38,7 @@ public class Businesses implements Serializable{
 		this.regDate = regDate;
 	}
 
-	public void setcancelDate(String cancelDate){
+	public void setCancelDate(String cancelDate){
 		this.cancelDate = cancelDate;
 	}
 
@@ -56,6 +56,38 @@ public class Businesses implements Serializable{
 
 	public void setAbn(String abn){
 		this.abn = abn;
+	}
+
+	public int byteAllocation(){
+		int pageSize = 0;
+		//businessName String
+		pageSize += (businessName.length() * 2);
+		//Status Boolean
+		pageSize += 1;
+		//regDate String
+		pageSize += (regDate.length() *2);
+		//cancelDate String
+		if(cancelDate != null){
+			pageSize += (cancelDate.length() * 2);
+		}
+		//RenewDate String
+		if(renewDate != null){
+			pageSize += (renewDate.length() * 2);
+		}
+		//stateNum String
+		if(stateNum != null){
+			pageSize += (stateNum.length() * 2);
+		}
+		//regState String
+		if(regState != null){
+			pageSize += (regState.length() * 2);
+		}
+		//abn String
+		if(abn != null){
+			pageSize += (abn.length() * 2);
+		}
+
+		return pageSize;
 	}
 
 	public String toString(){
