@@ -34,11 +34,7 @@ public class dbload{
 				writeLines();
 				System.out.println("Finsihed Writing File");
 				endTime = System.currentTimeMillis();
-				//totalTime = endTime-startTime;
-				
-				System.out.println("Number of Businesses: " + numOfBusinesses);
-				System.out.println("Number of Pages: " + numOfPages);
-				System.out.println("Time Taken: " + (endTime - startTime) +"ms");
+				stdout();
 
 			}
 		}
@@ -112,7 +108,7 @@ public class dbload{
 		FileOutputStream fos = null;
 		ObjectOutputStream oos = null;
 		try{
-			fos = new FileOutputStream("heap.dat");
+			fos = new FileOutputStream("heap."+pageSize);
 			oos = new ObjectOutputStream(fos);
 			for(Page p:heap){
 				if(p != null){
@@ -126,6 +122,11 @@ public class dbload{
 			System.out.println(e.getMessage());
 			e.printStackTrace();
 		}
+	}
+	public static void stdout(){
+		System.out.println("Number of Businesses: " + numOfBusinesses);
+		System.out.println("Number of Pages: " + numOfPages);
+		System.out.println("Time Taken: " + (endTime - startTime) +"ms");
 	}
 
 }

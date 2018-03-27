@@ -10,21 +10,37 @@ public class Businesses implements Serializable{
 		this.regDate = regDate;
 	}
 
-	public String getBusinessName(){return businessName;}
+	public String getBusinessName(){
+		return businessName;
+	}
 
-	public boolean getStatus(){return status;}
+	public boolean getStatus(){
+		return status;
+	}
 
-	public String getRegDate(){return regDate;}
+	public String getRegDate(){
+		return regDate;
+	}
 
-	public String getCancelDate(){return cancelDate;}
+	public String getCancelDate(){
+		return cancelDate;
+	}
 
-	public String getRenewDate(){return renewDate;}
+	public String getRenewDate(){
+		return renewDate;
+	}
 
-	public String getStateNum(){return stateNum;}
+	public String getStateNum(){
+		return stateNum;
+	}
 	
-	public String getRegState(){return regState;}
+	public String getRegState(){
+		return regState;
+	}
 
-	public String getAbn(){return abn;}
+	public String getAbn(){
+		return abn;
+	}
 
 	public void setBusinessName(String businessName){
 		this.businessName = businessName;
