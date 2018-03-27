@@ -57,4 +57,8 @@ public class Businesses implements Serializable{
 	public void setAbn(String abn){
 		this.abn = abn;
 	}
+
+	public String toString(){
+		return "BN_Name: " + businessName + " BN_Status: " + status + " BN_RegDate: " + regDate;
+	}
 }
