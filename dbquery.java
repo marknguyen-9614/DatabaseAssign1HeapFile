@@ -3,7 +3,8 @@ import java.util.*;
 
 public class dbquery{
 	static int pageSize = 0;
-	static int pagesSearched= 0;
+	static int pagesSearched = 0;
+	static int businessesFound = 0;
 	static String searchQuery;
 	static long startTime = 0;
 	static long endTime = 0;
@@ -65,6 +66,7 @@ public class dbquery{
 					System.out.println("ABN: " + b.getAbn());
 					System.out.println("======================================================");
 					System.out.println();
+					businessesFound++;
 				}
 			}
 			pagesSearched++;
@@ -72,6 +74,7 @@ public class dbquery{
 	}
 
 	public static void stdout(){
+		System.out.println("Businesses Found: " + businessesFound);
 		System.out.println("Pages searched: "+ pagesSearched);
 		System.out.println("Time Taken: " + (endTime - startTime) +"ms");	
 	}

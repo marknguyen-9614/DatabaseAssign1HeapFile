@@ -105,6 +105,7 @@ public class dbload{
 				System.out.println(numOfPages);
 			}
 		}
+		heap.add(page);
 		br.close();
 		fr.close();
 	}
