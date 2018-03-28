@@ -22,7 +22,6 @@ public class dbquery{
 					Object obj = ois.readObject();
 					page = (Page)obj;
 					heap.add(page);
-					//System.out.println(page.businesses);
 				}
 				catch(EOFException eoe){
 					break;
@@ -54,7 +53,7 @@ public class dbquery{
 		for (Page p:heap){
 			for(Businesses b:p.businesses){
 				//System.out.println(b);
-				if(b.getBusinessName().toLowerCase().contains(searchQuery.toLowerCase())){
+				if(b.getBusinessName().contains(searchQuery)){
 					System.out.println("======================================================");
 					System.out.println("Business Name: " + b.getBusinessName());
 					System.out.println("Reg Status: " + b.getStatus());
