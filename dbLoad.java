@@ -24,6 +24,7 @@ public class dbload{
 				}
 				
 				try{
+					System.out.println("Reading File");
 					readLines(f);
 				}
 				catch(FileNotFoundException fnf){
@@ -35,7 +36,7 @@ public class dbload{
 					e.printStackTrace();
 				}
 				System.out.println("Finished Reading File");
-
+				System.out.println("Writing to heap file");
 				writeLines();
 				System.out.println("Finsihed Writing File");
 				endTime = System.currentTimeMillis();
@@ -92,7 +93,7 @@ public class dbload{
 			if(businesses.byteAllocation()+page.getPageSize() < pageSize){
 				page.addBusinesses(businesses);
 				numOfBusinesses++;
-				System.out.println(businesses);
+				//System.out.println(businesses);
 
 			}
 			else{
@@ -101,8 +102,8 @@ public class dbload{
 				numOfPages++;
 				page.addBusinesses(businesses);
 				numOfBusinesses++;
-				System.out.println(businesses);
-				System.out.println(numOfPages);
+				//System.out.println(businesses);
+				//System.out.println(numOfPages);
 			}
 		}
 		heap.add(page);
