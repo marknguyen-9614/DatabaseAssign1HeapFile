@@ -126,7 +126,6 @@ public class dbload{
 			oos.close();
 		}
 		catch(IOException e){
-			System.out.println(e.getMessage());
 			e.printStackTrace();
 		}
 	}
